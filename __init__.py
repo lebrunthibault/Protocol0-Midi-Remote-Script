@@ -1,8 +1,8 @@
-from a_protocol_0_midi.Protocol0Midi import Protocol0Midi
+from protocol0_midi.Protocol0Midi import Protocol0Midi
 
 # noinspection PyBroadException
 try:
-    import a_protocol_0.make_path
+    import protocol0.make_path
 except Exception:
     pass
 

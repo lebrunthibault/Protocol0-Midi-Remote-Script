@@ -3,7 +3,7 @@ from typing import Any, Tuple
 
 from _Framework.ControlSurface import ControlSurface, get_control_surfaces
 from _Framework.Util import find_if
-from a_protocol_0 import Protocol0
+from protocol0 import Protocol0
 
 
 class Protocol0Midi(ControlSurface):
