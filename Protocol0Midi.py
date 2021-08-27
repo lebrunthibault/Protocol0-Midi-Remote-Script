@@ -26,8 +26,8 @@ class Protocol0Midi(ControlSurface):
 
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
-        self.log_message("P0Midi: receive midi_bytes")
-        self.log_message(midi_bytes)
+        # self.log_message("P0Midi: receive midi_bytes")
+        # self.log_message(midi_bytes)
         if self.main_p0_script:
             self.main_p0_script.midiManager.receive_midi(midi_bytes)
         else:
