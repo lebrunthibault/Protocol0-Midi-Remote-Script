@@ -28,8 +28,6 @@ class Protocol0Midi(ControlSurface):
             log_ableton("Error: couldn't find main Protocol0 script", level=LogLevelEnum.ERROR)
             return
 
-        log_ableton("Found Protocol0 Script", level=LogLevelEnum.DEBUG)
-
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
         if self.main_p0_script:
