@@ -1,4 +1,6 @@
 from types import MethodType
+
+from p0_system_api import P0SystemAPI
 from typing import Any, Tuple
 
 from _Framework.ControlSurface import ControlSurface, get_control_surfaces
@@ -24,9 +26,11 @@ class Protocol0Midi(ControlSurface):
         # stop log duplication
         self._c_instance.log_message = MethodType(lambda s, message: None, self._c_instance)  # noqa
         self.main_p0_script = find_if(lambda s: isinstance(s, Protocol0), get_control_surfaces())  # type: Protocol0
+
         if self.main_p0_script is None:
             log_ableton("Error: couldn't find main Protocol0 script", level=LogLevelEnum.ERROR)
             return
+        P0SystemAPI().notify_protocol0_midi_up()
 
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
