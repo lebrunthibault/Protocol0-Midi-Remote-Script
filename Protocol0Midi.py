@@ -30,6 +30,7 @@ class Protocol0Midi(ControlSurface):
         if self.main_p0_script is None:
             log_ableton("Error: couldn't find main Protocol0 script", level=LogLevelEnum.ERROR)
             return
+        log_ableton("Notifying Protocol0Midi up")
         P0SystemAPI().notify_protocol0_midi_up()
 
     def receive_midi(self, midi_bytes):
