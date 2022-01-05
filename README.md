@@ -1,4 +1,4 @@
-# Companion MIDI router script for Protocol0 surface script
+# Companion MIDI proxy script for Protocol0 surface script
 
 > A surface script cannot listen to multiple midi ports at the same time
 > 
