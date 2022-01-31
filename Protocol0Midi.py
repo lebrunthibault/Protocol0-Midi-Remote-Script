@@ -6,8 +6,8 @@ from typing import Any, Tuple
 from _Framework.ControlSurface import ControlSurface, get_control_surfaces
 from _Framework.Util import find_if
 from protocol0 import Protocol0
-from protocol0.enums.LogLevelEnum import LogLevelEnum
-from protocol0.utils.log import log_ableton
+from protocol0.domain.enums.LogLevelEnum import LogLevelEnum
+from protocol0.infra.log import log_ableton
 
 
 class Protocol0Midi(ControlSurface):
