@@ -7,6 +7,7 @@ from _Framework.ControlSurface import ControlSurface, get_control_surfaces
 from _Framework.Util import find_if
 from protocol0 import Protocol0
 from protocol0.domain.enums.LogLevelEnum import LogLevelEnum
+from protocol0.infra.MidiManager import MidiManager
 from protocol0.infra.log import log_ableton
 
 
@@ -40,6 +41,6 @@ class Protocol0Midi(ControlSurface):
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
         if self.main_p0_script:
-            self.main_p0_script.midiManager.receive_midi(midi_bytes)
+            MidiManager.receive_midi(midi_bytes=midi_bytes)
         else:
             log_ableton("Received midi input but no Protocol0 script to forward it to", level=LogLevelEnum.ERROR)
