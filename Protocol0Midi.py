@@ -31,6 +31,7 @@ class Protocol0Midi(ControlSurface):
         self.log_message = log_message
         # stop log duplication
         self._c_instance.log_message = MethodType(lambda s, message: None, self._c_instance)  # noqa
+        return
         self.main_p0_script = find_if(lambda s: isinstance(s, Protocol0), get_control_surfaces())  # type: Protocol0
 
         self._logger = LoggerService()
