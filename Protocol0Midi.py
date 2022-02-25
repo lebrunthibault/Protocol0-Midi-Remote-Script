@@ -18,7 +18,7 @@ class Protocol0Midi(ControlSurface):
     So we send input to a loopback port connected to this small script and route it back to the main script.
     Alternate solution is more cumbersome: Merge midi ports with something like Bome
 
-    This expects the Protocol0 code to be in the Remote scripts (will not even appear in the list otherwise)
+    This expects the Protocol0 lint to be in the Remote scripts (will not even appear in the list otherwise)
     And will log an error if the Protocol0 script is not used as a Control Surface
     """
 
