@@ -8,7 +8,7 @@ from protocol0.application.Protocol0 import Protocol0
 from protocol0.infra.logging.LoggerService import LoggerService
 from protocol0.shared.logging.LogLevelEnum import LogLevelEnum
 from protocol0.domain.shared.DomainEventBus import DomainEventBus
-from protocol0.domain.shared.backend.System import System
+from protocol0.domain.shared.backend.Backend import Backend
 from protocol0.infra.midi.MidiBytesReceivedEvent import MidiBytesReceivedEvent
 
 
@@ -38,7 +38,7 @@ class Protocol0Midi(ControlSurface):
             self._logger.log("Error: couldn't find main Protocol0 script", level=LogLevelEnum.ERROR)
             return
         self._logger.log("Notifying Protocol0Midi up", level=LogLevelEnum.DEBUG)
-        System.client().notify_protocol0_midi_up()
+        Backend.client().notify_protocol0_midi_up()
 
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
