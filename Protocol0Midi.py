@@ -43,6 +43,6 @@ class Protocol0Midi(ControlSurface):
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
         if self.main_p0_script:
-            DomainEventBus.notify(MidiBytesReceivedEvent(midi_bytes))
+            DomainEventBus.emit(MidiBytesReceivedEvent(midi_bytes))
         else:
             self._logger.log("Received midi input but no Protocol0 script to forward it to", level=LogLevelEnum.ERROR)
