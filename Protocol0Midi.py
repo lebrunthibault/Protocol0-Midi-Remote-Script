@@ -7,7 +7,7 @@ from _Framework.Util import find_if
 from protocol0.application.Protocol0 import Protocol0
 from protocol0.infra.logging.LoggerService import LoggerService
 from protocol0.shared.logging.LogLevelEnum import LogLevelEnum
-from protocol0.domain.shared.DomainEventBus import DomainEventBus
+from protocol0.domain.shared.event.DomainEventBus import DomainEventBus
 from protocol0.domain.shared.backend.Backend import Backend
 from protocol0.infra.midi.MidiBytesReceivedEvent import MidiBytesReceivedEvent
 
