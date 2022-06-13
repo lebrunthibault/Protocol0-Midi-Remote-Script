@@ -1,15 +1,15 @@
 from types import MethodType
 
-from typing import Any, Tuple
-
 from _Framework.ControlSurface import ControlSurface, get_control_surfaces
 from _Framework.Util import find_if
+from typing import Any, Tuple
+
 from protocol0.application.Protocol0 import Protocol0
-from protocol0.infra.logging.LoggerService import LoggerService
-from protocol0.shared.logging.LogLevelEnum import LogLevelEnum
-from protocol0.domain.shared.event.DomainEventBus import DomainEventBus
 from protocol0.domain.shared.backend.Backend import Backend
+from protocol0.domain.shared.event.DomainEventBus import DomainEventBus
+from protocol0.infra.logging.LoggerService import LoggerService
 from protocol0.infra.midi.MidiBytesReceivedEvent import MidiBytesReceivedEvent
+from protocol0.shared.logging.LogLevelEnum import LogLevelEnum
 
 
 class Protocol0Midi(ControlSurface):
@@ -42,7 +42,4 @@ class Protocol0Midi(ControlSurface):
 
     def receive_midi(self, midi_bytes):
         # type: (Tuple) -> None
-        if self.main_p0_script:
-            DomainEventBus.emit(MidiBytesReceivedEvent(midi_bytes))
-        else:
-            self._logger.log("Received midi input but no Protocol0 script to forward it to", level=LogLevelEnum.ERROR)
+        DomainEventBus.emit(MidiBytesReceivedEvent(midi_bytes))
