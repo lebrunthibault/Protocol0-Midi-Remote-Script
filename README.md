@@ -9,4 +9,5 @@ So the only way to communicate with it from the backend is to create a second sc
 it's only goal is to forward midi to the main script.
 
 So this script simply routes external midi messages received on its input port to the [Protocol0 script](https://github.com/lebrunthibault/Protocol-0-Surface-Script).
-Should be setup with P0_IN virtual midi port as input.
+Should be loaded twice in Live.
+Once with P0_IN_MIDI, and the second time with P0_IN_HTTP virtual midi port as midi input port.
