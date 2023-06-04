@@ -1,3 +1,5 @@
+# Disclaimer : the project moved to this monorepo : https://github.com/lebrunthibault/protocol0 and will be archived
+
 # Companion MIDI proxy script for [Protocol0 remote script]((https://github.com/lebrunthibault/Protocol0-Ableton-Remote-Script))
 
 It allows the [Protocol0 backend](https://github.com/lebrunthibault/Protocol-0-backend) to communicate back to the script.
